@@ -1,0 +1,23 @@
+name: main
+on:
+  push:
+    branches: [master]
+  schedule:
+  - cron: '55 8 * * *'
+
+jobs:
+  build:
+    name: main
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - run: pip install pre-commit-mirror-maker
+    - run: git config --global user.name 'Github Actions'
+    - run: git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+    - run: pre-commit-mirror . --language=python --package-name=clang-format --types-or c++ --types-or c --types-or 'c#' --args=-style=file,-i
+    - run: |
+        git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY
+        git push origin HEAD:refs/heads/master --tags
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
