@@ -2,7 +2,7 @@
     name: clang-format
     entry: clang-format
     language: python
-    'types_or': [c++, c, c#]
+    'types_or': [c++, c, c#, java]
     args: ["-style=file", "-i"]
     require_serial: false
     additional_dependencies: []
