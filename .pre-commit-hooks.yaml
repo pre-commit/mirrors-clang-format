@@ -8,3 +8,15 @@
     require_serial: false
     additional_dependencies: []
     minimum_pre_commit_version: '2.9.2'
+
+-   id: git-clang-format
+    name: git-clang-format
+    description: 
+    entry: git-clang-format
+    language: python
+    'types_or': [c++, c, c#, cuda, java, javascript, json, objective-c, proto]
+    args: ["-style=file", "-i"]
+    require_serial: false
+    additional_dependencies: []
+    minimum_pre_commit_version: '2.9.2'
+
