@@ -1,6 +1,6 @@
 -   id: clang-format
     name: clang-format
-    description: ''
+    description: 'Format entire file using `clang-format --style=file -i`'
     entry: clang-format
     language: python
     'types_or': [c++, c, c#, cuda, java, javascript, json, objective-c, proto]
@@ -11,12 +11,11 @@
 
 -   id: git-clang-format
     name: git-clang-format
-    description: 
+    description: 'Format changed lines of changed files using `git-clang-format --style file`'
     entry: git-clang-format
     language: python
     'types_or': [c++, c, c#, cuda, java, javascript, json, objective-c, proto]
-    args: ["-style=file", "-i"]
+    args: ["--style", "file", "$PRE_COMMIT_FROM_REF", "--"]
     require_serial: false
     additional_dependencies: []
     minimum_pre_commit_version: '2.9.2'
-
