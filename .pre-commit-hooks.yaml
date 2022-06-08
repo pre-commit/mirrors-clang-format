@@ -1,4 +1,4 @@
--   id: clang-format -i
+-   id: clang-format
     name: clang-format
     description: ''
     entry: clang-format -i
