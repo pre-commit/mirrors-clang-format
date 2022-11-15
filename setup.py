@@ -6,5 +6,5 @@ from setuptools import setup
 setup(
     name='pre_commit_placeholder_package',
     version='0.0.0',
-    install_requires=['clang-format==14.0.6'],
+    install_requires=['clang-format==15.0.4'],
 )
