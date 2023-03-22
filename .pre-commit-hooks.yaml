@@ -3,7 +3,7 @@
     description: ''
     entry: clang-format -i
     language: python
-    'types_or': [c++, c, c#, cuda, java, javascript, json, objective-c, proto]
+    'types_or': [c++, c, c#, cuda, java, javascript, json, objective-c, proto, textproto]
     args: ["-style=file"]
     require_serial: false
     additional_dependencies: []
