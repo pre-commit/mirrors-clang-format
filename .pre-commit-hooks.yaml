@@ -1,10 +1,11 @@
 -   id: clang-format
     name: clang-format
-    description: ''
+    description: Formats C, C++, and other supported files, including custom extensions like Metal shaders.
     entry: clang-format -i
     language: python
-    'types_or': [c++, c, c#, cuda, java, javascript, json, objective-c, proto, textproto]
+    types_or: [c++, c, c#, cuda, java, javascript, json, objective-c, proto, textproto]
     args: ["-style=file"]
+    files: '\.(cpp|h|hpp|metal)$'
     require_serial: false
     additional_dependencies: []
     minimum_pre_commit_version: '2.9.2'
