@@ -18,3 +18,12 @@ Add this to your `.pre-commit-config.yaml`:
     hooks:
     -   id: clang-format
 ```
+
+Use `clang-format-diff` to format only the modified portions of the code, rather than the entire changed files.
+
+```yaml
+-   repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: ''  # Use the sha / tag you want to point at
+    hooks:
+    -   id: clang-format-diff
+```
