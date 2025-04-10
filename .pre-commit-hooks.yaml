@@ -4,6 +4,7 @@
     entry: clang-format -i
     language: python
     'types_or': [c++, c, c#, cuda, java, javascript, json, objective-c, proto, textproto, metal]
+    exclude_types: [jupyter]
     args: ["-style=file"]
     require_serial: false
     additional_dependencies: []
